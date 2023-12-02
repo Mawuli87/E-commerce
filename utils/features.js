@@ -33,11 +33,11 @@ export const sendToken = (user, res, message, statusCode) => {
 
   export const sendEmail = async (subject, to, text) => {
     const transporter = createTransport({
-      host: "sandbox.smtp.mailtrap.io",
-      port: "2525",
+      host: process.env.SMTP_HOST,
+      port: process.env.SMTP_PORT,
       auth: {
-        user: "4696ad994851e4",
-        pass: "********0397",
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
       },
     });
   
@@ -47,3 +47,21 @@ export const sendToken = (user, res, message, statusCode) => {
       text,
     });
   };
+  
+
+  // export const sendEmail = async (subject, to, text) => {
+  //   const transporter = createTransport({
+  //     host: "sandbox.smtp.mailtrap.io",
+  //     port: "2525",
+  //     auth: {
+  //       user: "4696ad994851e4",
+  //       pass: "********0397",
+  //     },
+  //   });
+  
+  //   await transporter.sendMail({
+  //     to,
+  //     subject,
+  //     text,
+  //   });
+  // };
