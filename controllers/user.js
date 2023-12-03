@@ -30,7 +30,7 @@ export const login = asyncError(async (req, res, next) => {
     return   next(new ErrorHandler("Incorrect Password",400))
   }
 
-  sendToken(user, res, `Welcome Back, ${user.name}`, 200);
+  //sendToken(user, res, `Welcome Back, ${user.name}`, 200);
 });
 
 
